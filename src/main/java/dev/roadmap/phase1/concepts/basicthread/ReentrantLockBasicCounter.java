@@ -3,15 +3,16 @@ package dev.roadmap.phase1.concepts.basicthread;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ReentrantLockBasicCounter {
+public class ReentrantLockBasicCounter implements Counter {
     private int value;
-    private Lock lock;
+    private final Lock lock;
 
     public ReentrantLockBasicCounter() {
         this.value = 0;
         this.lock = new ReentrantLock();
     }
 
+    @Override
     public void increment() {
         lock.lock();
 
@@ -22,6 +23,7 @@ public class ReentrantLockBasicCounter {
         }
     }
 
+    @Override
     public int get() {
         return this.value;
     }
