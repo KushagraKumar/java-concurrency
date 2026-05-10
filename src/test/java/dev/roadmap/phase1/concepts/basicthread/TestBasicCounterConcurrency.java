@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestIncorrectBasicCounterConcurrency {
+public class TestBasicCounterConcurrency {
 
     @Test
     public void testConcurrentIncrements() throws InterruptedException {
-        IncorrectBasicCounter counter = new IncorrectBasicCounter();
+        BasicCounter counter = new BasicCounter();
         int threads = 10;
         int iterations = 100_000;
         int expectedValue = threads * iterations;

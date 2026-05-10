@@ -2,7 +2,7 @@ package dev.roadmap.phase1.concepts.basicthread;
 
 public class BasicThread {
     public static void main(String[] args) throws InterruptedException {
-        IncorrectBasicCounter counter = new IncorrectBasicCounter();
+        BasicCounter counter = new BasicCounter();
 
         Thread thread1 = new Thread(() -> {
             for (int i=0;i<1000;i++) counter.increment();

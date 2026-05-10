@@ -1,9 +1,9 @@
 package dev.roadmap.phase1.concepts.basicthread;
 
-public class IncorrectBasicCounter {
+public class BasicCounter {
     private int value;
 
-    public IncorrectBasicCounter() {
+    public BasicCounter() {
         this.value = 0;
     }
 

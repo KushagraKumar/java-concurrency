@@ -1,9 +1,9 @@
 package dev.roadmap.phase1.concepts.basicthread;
 
-public class CorrectBasicCounter {
+public class SynchronizedMethodBasicCounter {
     private int value;
 
-    public CorrectBasicCounter() {
+    public SynchronizedMethodBasicCounter() {
         this.value = 0;
     }
 
