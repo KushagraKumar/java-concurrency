@@ -1,0 +1,8 @@
+target/
+*.class
+*.jfr
+*.hprof
+thread-dump-*.txt
+concurrency-profile-*.jfr
+.idea/
+*.iml
