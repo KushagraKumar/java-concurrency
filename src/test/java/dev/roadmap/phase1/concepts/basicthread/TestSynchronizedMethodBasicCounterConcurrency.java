@@ -11,8 +11,8 @@ public class TestSynchronizedMethodBasicCounterConcurrency {
     public void testCorrectBasicCounterConcurrency() throws InterruptedException {
         SynchronizedMethodBasicCounter counter = new SynchronizedMethodBasicCounter();
         int threads = 10;
-        int iterations = 100_000;
-        int expectedValue = threads * iterations;
+        long iterations = 100_000_000;
+        long expectedValue = threads * iterations;
 
         ConcurrentTestHarness.runConcurrently(threads, iterations, i -> counter.increment());
 

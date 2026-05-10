@@ -3,7 +3,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntConsumer;
 public class ConcurrentTestHarness {
-    public static void runConcurrently(int threads, int iterationsPerThread, IntConsumer task) throws InterruptedException {
+    public static void runConcurrently(int threads, long iterationsPerThread, IntConsumer task) throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(threads);
         CountDownLatch startLatch = new CountDownLatch(1);
         CountDownLatch doneLatch = new CountDownLatch(threads);
