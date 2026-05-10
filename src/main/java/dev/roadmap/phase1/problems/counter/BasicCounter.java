@@ -1,4 +1,4 @@
-package dev.roadmap.phase1.concepts.basicthread;
+package dev.roadmap.phase1.problems.counter;
 
 public class BasicCounter implements Counter {
     private int value;

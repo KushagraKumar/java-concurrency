@@ -1,4 +1,4 @@
-package dev.roadmap.phase1.concepts.basicthread;
+package dev.roadmap.phase1.problems.counter;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

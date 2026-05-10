@@ -1,5 +1,6 @@
 package dev.roadmap.phase1.concepts.basicthread;
 
+import dev.roadmap.phase1.problems.counter.Counter;
 import dev.roadmap.utils.ConcurrentTestHarness;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
