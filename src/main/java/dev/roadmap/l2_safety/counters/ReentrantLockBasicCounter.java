@@ -28,4 +28,13 @@ public class ReentrantLockBasicCounter implements Counter {
         return this.value;
     }
 
+    public int getSafe() {
+        lock.lock();
+        try {
+            return this.value;
+        } finally {
+            lock.unlock();
+        }
+    }
+
 }

@@ -16,4 +16,8 @@ public class SynchronizedMethodBasicCounter implements Counter {
     public int get() {
         return this.value;
     }
+
+    public synchronized int getSafe() {
+        return this.value;
+    }
 }

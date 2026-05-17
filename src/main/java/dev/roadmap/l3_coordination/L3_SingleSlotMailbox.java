@@ -1,5 +1,8 @@
 package dev.roadmap.l3_coordination;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * L3: Single-Slot Mailbox (Wait/Notify)
  * 
@@ -11,14 +14,27 @@ package dev.roadmap.l3_coordination;
  */
 public class L3_SingleSlotMailbox<T> {
     private T message;
-    private boolean full = false;
+    private volatile boolean full = false;
 
     public synchronized void put(T msg) throws InterruptedException {
-        // TODO: Wait while full, then put
+        while(full) {
+            this.wait();
+        }
+
+        // Mailbox is empty
+        this.message = msg;
+        full = true;
+        this.notifyAll();
     }
 
     public synchronized T take() throws InterruptedException {
-        // TODO: Wait while empty, then take
-        return null;
+        while(!full) {
+            this.wait();
+        }
+
+        T msg = this.message;
+        full = false;
+        this.notifyAll();
+        return msg;
     }
 }
